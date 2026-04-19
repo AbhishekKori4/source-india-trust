@@ -256,29 +256,6 @@ export default function Index() {
         </div>
       </SectionWrapper>
 
-      {/* Industries */}
-      <SectionWrapper className="bg-section-alt">
-        <SectionHeading title="Industries We Serve" subtitle="Our flexible sourcing model adapts to diverse industry needs." />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {industries.map((ind) => (
-            <div key={ind.title} className="bg-card rounded-xl border border-border p-6 text-center hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <ind.icon size={24} className="text-primary" />
-              </div>
-              <h3 className="font-heading font-medium text-sm">{ind.title}</h3>
-            </div>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link
-            to="/industries"
-            className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
-          >
-            Explore Industries <ArrowRight size={18} />
-          </Link>
-        </div>
-      </SectionWrapper>
-
       {/* Stats & Testimonial */}
       <SectionWrapper>
         <SectionHeading
