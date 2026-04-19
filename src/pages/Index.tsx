@@ -37,13 +37,11 @@ const whyUs = [
 ];
 
 const steps = [
-  { num: "01", title: "Requirement Understanding", desc: "Detailed assessment of your product specs, quality benchmarks, and timelines." },
-  { num: "02", title: "Supplier Identification", desc: "Shortlist verified suppliers from our network aligned with your requirements." },
-  { num: "03", title: "Sampling & Validation", desc: "Product samples facilitated and validated against your expectations." },
-  { num: "04", title: "Pricing & Agreement", desc: "Transparent pricing structures with clear cost breakdowns." },
-  { num: "05", title: "Production Oversight", desc: "Production progress monitored for timeline and quality adherence." },
-  { num: "06", title: "Quality Inspection", desc: "Final inspection before shipment to ensure compliance with agreed standards." },
-  { num: "07", title: "Export & Delivery", desc: "Shipping, documentation, and delivery coordination to your destination." },
+  { num: "01", icon: Search, title: "Discover & Define", desc: "We deeply understand your product specs, quality benchmarks, and timelines, then identify verified suppliers from our network." },
+  { num: "02", icon: FileCheck, title: "Sample & Agree", desc: "Samples are validated against your expectations, followed by transparent pricing and clear contractual agreements." },
+  { num: "03", icon: Settings, title: "Produce & Oversee", desc: "Production progress is closely monitored to ensure timeline adherence and consistent quality standards." },
+  { num: "04", icon: ShieldCheck, title: "Inspect & Approve", desc: "Multi-stage quality inspections before shipment ensure full compliance with your agreed specifications." },
+  { num: "05", icon: Truck, title: "Export & Deliver", desc: "End-to-end shipping, documentation, and delivery coordination right to your destination." },
 ];
 
 const industries = [
@@ -224,29 +222,35 @@ export default function Index() {
 
       {/* Process */}
       <SectionWrapper>
-        <SectionHeading title="How It Works" subtitle="A structured, transparent process from requirement to delivery." />
-        <div className="relative">
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2" />
-          <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8">
-            {steps.map((s, i) => (
-              <motion.div
-                key={s.num}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className={`relative bg-card rounded-xl border border-border p-6 ${
-                  i % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"
-                }`}
-              >
-                <span className="text-3xl font-heading font-bold text-secondary/30">{s.num}</span>
-                <h3 className="font-heading font-semibold mt-1">{s.title}</h3>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+        <SectionHeading title="How It Works" subtitle="A structured, transparent process from requirement to delivery — in five seamless stages." />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {steps.map((s, i) => (
+            <motion.div
+              key={s.num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative bg-card rounded-xl border border-border p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+            >
+              {/* Connector arrow (desktop only) */}
+              {i < steps.length - 1 && (
+                <div className="hidden lg:flex absolute top-1/2 -right-4 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-background border border-border items-center justify-center">
+                  <ArrowRight size={14} className="text-secondary" />
+                </div>
+              )}
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-11 h-11 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary group-hover:text-secondary-foreground transition-colors">
+                  <s.icon size={20} className="text-secondary group-hover:text-secondary-foreground transition-colors" />
+                </div>
+                <span className="text-2xl font-heading font-bold text-secondary/30">{s.num}</span>
+              </div>
+              <h3 className="font-heading font-semibold text-base mb-2">{s.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+            </motion.div>
+          ))}
         </div>
-        <div className="text-center mt-10">
+        <div className="text-center mt-12">
           <Link
             to="/process"
             className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
