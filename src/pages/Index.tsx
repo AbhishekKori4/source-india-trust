@@ -279,6 +279,58 @@ export default function Index() {
         </div>
       </SectionWrapper>
 
+      {/* Stats & Testimonial */}
+      <SectionWrapper>
+        <SectionHeading
+          title="The Freedom to Plan, the Power to Deliver"
+          subtitle="We take care of sourcing, inspecting, and preparing your goods for export. From procurement to port delivery, we make the process smooth and hassle-free."
+        />
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          {/* Testimonial */}
+          <div className="bg-card rounded-2xl border border-border p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <Quote size={36} className="text-secondary mb-4" />
+              <div className="flex gap-1 mb-5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={18} className="fill-secondary text-secondary" />
+                ))}
+              </div>
+              <p className="text-base md:text-lg text-foreground leading-relaxed italic">
+                "Working with ShreySure Global has been a game-changer. Their proactive communication and flawless execution saved us thousands on our last international shipment."
+              </p>
+            </div>
+            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <User size={22} className="text-primary" />
+              </div>
+              <div>
+                <p className="font-heading font-semibold text-foreground">Rohan Sharma</p>
+                <p className="text-sm text-muted-foreground">Import Manager, Apex Textiles</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats grid */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              { icon: Building2, value: "50+", title: "Partner Businesses", desc: "We build lasting relationships, not just process orders." },
+              { icon: Star, value: "4.9/5", title: "Client Satisfaction Score", desc: "Based on feedback from our valued partners." },
+              { icon: User, value: "1-to-1", title: "Dedicated Account Manager", desc: "A single point of contact for all your needs." },
+              { icon: Phone, value: "Direct", title: "Founder Access", desc: "Our leadership is always available to ensure your success." },
+            ].map((s) => (
+              <div key={s.title} className="bg-card rounded-2xl border border-border p-6 text-center flex flex-col items-center hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <s.icon size={22} className="text-primary" />
+                </div>
+                <p className="text-3xl font-heading font-bold text-primary">{s.value}</p>
+                <h3 className="font-heading font-semibold text-sm mt-2 text-foreground">{s.title}</h3>
+                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
+
       {/* CTA Banner */}
       <section className="bg-primary">
         <div className="container py-20 text-center">
