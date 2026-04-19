@@ -4,7 +4,8 @@ import {
   Search, ShieldCheck, Truck, FileCheck, Wrench,
   CheckCircle2, Eye, Clock, Scale, Settings, Globe,
   Factory, ShoppingBag, Shirt, Gem, Package,
-  ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock
+  ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock,
+  Building2, Star, User, Phone, Quote
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionWrapper from "@/components/SectionWrapper";
