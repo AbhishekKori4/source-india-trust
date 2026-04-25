@@ -48,8 +48,6 @@ export default function Contact() {
                 <option value="" disabled>Inquiry Type</option>
                 <option>Product Sourcing</option>
                 <option>Quality Assurance</option>
-                <option>Export & Logistics</option>
-                <option>Documentation & Compliance</option>
                 <option>Custom Requirements</option>
                 <option>General Inquiry</option>
               </select>
