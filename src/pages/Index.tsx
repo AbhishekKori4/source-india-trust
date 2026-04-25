@@ -7,7 +7,8 @@ import {
   Factory, ShoppingBag, Shirt, Gem, Package,
   ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock,
   Building2, Star, User, Phone, Quote,
-  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck
+  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck,
+  ClipboardEdit, ClipboardCheck, Handshake, MessageCircle, Trophy
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -37,11 +38,11 @@ const whyUs = [
 ];
 
 const steps = [
-  { num: "01", icon: Search, title: "Discover & Define", desc: "We deeply understand your product specs, quality benchmarks, and timelines, then identify verified suppliers from our network." },
-  { num: "02", icon: FileCheck, title: "Sample & Agree", desc: "Samples are validated against your expectations, followed by transparent pricing and clear contractual agreements." },
-  { num: "03", icon: Settings, title: "Produce & Oversee", desc: "Production progress is closely monitored to ensure timeline adherence and consistent quality standards." },
-  { num: "04", icon: ShieldCheck, title: "Inspect & Approve", desc: "Multi-stage quality inspections before shipment ensure full compliance with your agreed specifications." },
-  { num: "05", icon: Truck, title: "Export & Deliver", desc: "End-to-end shipping, documentation, and delivery coordination right to your destination." },
+  { num: "01", icon: ClipboardEdit, title: "Importer Fills Request Form", desc: "Share your product requirements, target specifications, volumes, and timelines through a simple structured form." },
+  { num: "02", icon: ClipboardCheck, title: "SGE Team Reviews & Qualifies", desc: "Our team reviews your request, qualifies feasibility, and aligns on commercials, quality benchmarks, and scope." },
+  { num: "03", icon: Handshake, title: "Match With Verified Exporter", desc: "We match you with the right verified supplier from our network — chosen for quality, capacity, and reliability." },
+  { num: "04", icon: Truck, title: "Coordination & Delivery", desc: "We coordinate production oversight, quality inspections, documentation, shipping, and delivery to your destination." },
+  { num: "05", icon: MessageCircle, title: "Post-Trade Support", desc: "Continued support after delivery — resolution, reorders, and long-term partnership for predictable sourcing." },
 ];
 
 const industries = [
@@ -328,7 +329,7 @@ export default function Index() {
 
       {/* Process */}
       <SectionWrapper>
-        <SectionHeading title="How It Works" subtitle="A structured, transparent process from requirement to delivery — in five seamless stages." />
+        <SectionHeading title="Simplified Global Trading" subtitle="Five seamless stages — from request to delivery and beyond — designed to make global sourcing effortless." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s, i) => (
             <motion.div
@@ -411,6 +412,20 @@ export default function Index() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bridging header */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wider mb-5">
+            <Trophy size={14} />
+            Proof in Numbers
+          </div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Trusted by Buyers. Backed by Results.
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            A growing network, a global footprint, and a satisfaction score that reflects our commitment to every partnership.
+          </p>
         </div>
 
         {/* 3 metric boxes */}
