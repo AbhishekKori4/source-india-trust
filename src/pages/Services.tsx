@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, ShieldCheck, Truck, FileCheck, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Search, ShieldCheck, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 
