@@ -17,18 +17,6 @@ const services = [
     benefits: ["Pre-production validation", "In-process inspections", "Final quality checks", "Detailed reporting"],
   },
   {
-    icon: Truck,
-    title: "Export & Logistics Management",
-    desc: "We manage the entire logistics chain including packaging, freight coordination, and shipment tracking to ensure timely and secure delivery.",
-    benefits: ["End-to-end freight coordination", "Real-time shipment tracking", "Secure packaging standards", "Timely delivery execution"],
-  },
-  {
-    icon: FileCheck,
-    title: "Documentation & Compliance",
-    desc: "We handle all necessary export documentation such as invoices, certificates, customs paperwork, and regulatory compliance requirements.",
-    benefits: ["Export documentation management", "Customs paperwork", "Regulatory compliance", "Certificate handling"],
-  },
-  {
     icon: Wrench,
     title: "Customization & Product Development",
     desc: "We work closely with suppliers to customize products based on your specifications, including design, materials, and packaging.",
