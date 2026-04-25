@@ -7,7 +7,8 @@ import {
   Factory, ShoppingBag, Shirt, Gem, Package,
   ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock,
   Building2, Star, User, Phone, Quote,
-  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck
+  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck,
+  ClipboardEdit, ClipboardCheck, Handshake, MessageCircle, Trophy
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionWrapper from "@/components/SectionWrapper";
