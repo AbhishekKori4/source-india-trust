@@ -241,7 +241,7 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeading
-              title="Built on Governance, Compliance, and Professional Integrity"
+              title="Focus on Quality, Compliance and Professional Integrity"
               center={false}
             />
             <p className="text-muted-foreground leading-relaxed mb-8">
