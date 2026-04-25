@@ -39,7 +39,7 @@ export default function Navbar() {
             to="/contact"
             className="inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
           >
-            Request a Quote
+            Source now
           </Link>
         </nav>
 
@@ -74,7 +74,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-2.5 text-sm font-semibold text-secondary-foreground mt-2"
             >
-              Request a Quote
+              Source now
             </Link>
           </div>
         </nav>

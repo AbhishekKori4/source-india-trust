@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
-  Search, ShieldCheck, Truck, FileCheck, Wrench,
+  Search, ShieldCheck, Wrench,
   CheckCircle2, Eye, Clock, Scale, Settings, Globe,
   Factory, ShoppingBag, Shirt, Gem, Package,
   ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock,
-  Building2, Star, User, Phone, Quote
+  Building2, Star, User, Phone, Quote,
+  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionWrapper from "@/components/SectionWrapper";
@@ -22,8 +24,6 @@ const trustItems = [
 const services = [
   { icon: Search, title: "Product Sourcing", desc: "We identify and onboard the most suitable suppliers based on your product requirements, volume expectations, and quality standards." },
   { icon: ShieldCheck, title: "Quality Assurance", desc: "Multi-stage quality checks including pre-production validation, in-process inspections, and final quality checks before dispatch." },
-  { icon: Truck, title: "Export & Logistics Management", desc: "Complete logistics chain management including packaging, freight coordination, and shipment tracking for timely delivery." },
-  { icon: FileCheck, title: "Documentation & Compliance", desc: "All necessary export documentation — invoices, certificates, customs paperwork, and regulatory compliance handled seamlessly." },
   { icon: Wrench, title: "Customization & Product Development", desc: "Close collaboration with suppliers to customize products based on your specifications, design, materials, and packaging." },
 ];
 
@@ -52,6 +52,63 @@ const industries = [
   { icon: Package, title: "Custom Product Requirements" },
 ];
 
+function SupplierCounter() {
+  const [count, setCount] = useState(235);
+  useEffect(() => {
+    let frame: number;
+    const start = performance.now();
+    const duration = 2200;
+    const from = 235;
+    const to = 300;
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(from + (to - from) * eased));
+      if (progress < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="relative bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/15 rounded-3xl p-8 md:p-10 overflow-hidden"
+    >
+      <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-secondary/20 blur-3xl" />
+      <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="relative">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 text-secondary text-xs font-semibold uppercase tracking-wider mb-6">
+          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          Live Network
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-7xl md:text-8xl font-heading font-bold text-primary-foreground tabular-nums leading-none">
+            {count}
+          </span>
+          <span className="text-4xl md:text-5xl font-heading font-bold text-secondary">+</span>
+        </div>
+        <p className="mt-4 text-lg font-semibold text-primary-foreground">Verified Suppliers</p>
+        <p className="text-sm text-primary-foreground/70 mt-1">Vetted across India — and growing every week.</p>
+
+        <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-primary-foreground/15">
+          {[
+            { value: "5+", label: "Countries" },
+            { value: "12+", label: "Categories" },
+            { value: "4.9★", label: "Rating" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-xl font-heading font-bold text-primary-foreground">{stat.value}</div>
+              <div className="text-xs text-primary-foreground/60 mt-0.5">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Index() {
   return (
     <>
@@ -62,33 +119,29 @@ export default function Index() {
           <div className="absolute inset-0 bg-primary/85" />
         </div>
         <div className="container relative z-10 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
-              Your Trusted Partner for Global Sourcing from India
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
-              End-to-end sourcing, quality assurance, and export solutions designed for reliability, transparency, and scale.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
-              >
-                Request a Quote <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-primary-foreground/30 px-7 py-3.5 font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              >
-                Speak to an Expert
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
+                Source with Confidence from India's Most Reliable Suppliers
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
+                End-to-end sourcing, quality assurance, and export solutions designed for reliability, transparency, and scale.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
+                >
+                  Source now <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
+            <SupplierCounter />
+          </div>
         </div>
       </section>
 
@@ -167,7 +220,7 @@ export default function Index() {
 
       {/* Why Choose Us */}
       <SectionWrapper>
-        <SectionHeading title="Why Global Buyers Choose ShreySure Global" />
+        <SectionHeading title="Why import from us?" />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {whyUs.map((w) => (
             <div key={w.title} className="flex items-start gap-4">
@@ -188,7 +241,7 @@ export default function Index() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <SectionHeading
-              title="Built on Governance, Compliance, and Professional Integrity"
+              title="Focus on Quality, Compliance and Professional Integrity"
               center={false}
             />
             <p className="text-muted-foreground leading-relaxed mb-8">
@@ -217,6 +270,59 @@ export default function Index() {
               In an industry where trust is a concern, our leadership ensures reliability, professionalism, and long-term partnership value.
             </p>
           </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Pain Points */}
+      <SectionWrapper className="bg-section-alt">
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Sourcing Shouldn't Feel Like a Gamble
+          </h2>
+          <p className="mt-5 text-muted-foreground leading-relaxed">
+            What starts as a "great deal" often turns into costly setbacks — leaving you asking, <span className="italic">"Can I really trust this process?"</span>
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+          {[
+            { icon: AlertTriangle, title: "Off-Sample Products", desc: "Products that don't match approved samples." },
+            { icon: ShieldCheck, title: "Inconsistent Quality", desc: "Quality you can't reliably sell to your customers." },
+            { icon: Clock, title: "Disruptive Delays", desc: "Missed timelines that throw your operations off track." },
+            { icon: TrendingDown, title: "Hidden Costs", desc: "Surprise charges that quietly erode your margins." },
+          ].map((p) => (
+            <div key={p.title} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <div className="w-11 h-11 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
+                <p.icon size={20} className="text-destructive" />
+              </div>
+              <h3 className="font-heading font-semibold text-base mb-2">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-card border border-border rounded-2xl p-8 md:p-10 max-w-4xl mx-auto">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
+              <HelpCircle size={20} className="text-primary" />
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-lg">You're trying to grow your business, not manage uncertainty.</h3>
+              <p className="text-sm text-muted-foreground mt-1">Yet most buyers are forced to navigate:</p>
+            </div>
+          </div>
+          <ul className="space-y-3 pl-1">
+            {[
+              "A fragmented supplier landscape",
+              "Limited visibility into quality control",
+              "No assurance of what you'll actually receive",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </SectionWrapper>
 
@@ -260,55 +366,84 @@ export default function Index() {
         </div>
       </SectionWrapper>
 
-      {/* Stats & Testimonial */}
+      {/* Customer Stories */}
       <SectionWrapper>
         <SectionHeading
-          title="The Freedom to Plan, the Power to Deliver"
-          subtitle="We take care of sourcing, inspecting, and preparing your goods for export. From procurement to port delivery, we make the process smooth and hassle-free."
+          title="Customer Stories"
+          subtitle="Real outcomes from buyers who trusted ShreySure Global to manage their sourcing end-to-end."
         />
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* Testimonial */}
-          <div className="bg-card rounded-2xl border border-border p-8 md:p-10 flex flex-col justify-between">
-            <div>
-              <Quote size={36} className="text-secondary mb-4" />
-              <div className="flex gap-1 mb-5">
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              quote: "ShreySure Global transformed how we source from India. Their proactive communication and flawless execution saved us thousands on our last shipment.",
+              name: "Rohan Sharma",
+              role: "Import Manager, Apex Textiles",
+            },
+            {
+              quote: "We struggled with quality issues for years. With ShreySure, every batch arrives matching our approved sample — no surprises, no rejects.",
+              name: "Linh Nguyen",
+              role: "Procurement Lead, Saigon Home Goods",
+            },
+            {
+              quote: "Their compliance and documentation are flawless. Customs clearance has never been smoother. Truly an extension of our own team.",
+              name: "Marcus Weber",
+              role: "Operations Director, Berlin Imports GmbH",
+            },
+          ].map((t) => (
+            <div key={t.name} className="bg-card rounded-2xl border border-border p-7 flex flex-col hover:shadow-lg transition-shadow">
+              <Quote size={28} className="text-secondary mb-4" />
+              <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-secondary text-secondary" />
+                  <Star key={i} size={16} className="fill-secondary text-secondary" />
                 ))}
               </div>
-              <p className="text-base md:text-lg text-foreground leading-relaxed italic">
-                "Working with ShreySure Global has been a game-changer. Their proactive communication and flawless execution saved us thousands on our last international shipment."
+              <p className="text-sm md:text-base text-foreground leading-relaxed italic flex-1">
+                "{t.quote}"
               </p>
-            </div>
-            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <User size={22} className="text-primary" />
-              </div>
-              <div>
-                <p className="font-heading font-semibold text-foreground">Rohan Sharma</p>
-                <p className="text-sm text-muted-foreground">Import Manager, Apex Textiles</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats grid */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {[
-              { icon: Building2, value: "50+", title: "Partner Businesses", desc: "We build lasting relationships, not just process orders." },
-              { icon: Star, value: "4.9/5", title: "Client Satisfaction Score", desc: "Based on feedback from our valued partners." },
-              { icon: User, value: "1-to-1", title: "Dedicated Account Manager", desc: "A single point of contact for all your needs." },
-              { icon: Phone, value: "Direct", title: "Founder Access", desc: "Our leadership is always available to ensure your success." },
-            ].map((s) => (
-              <div key={s.title} className="bg-card rounded-2xl border border-border p-6 text-center flex flex-col items-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <s.icon size={22} className="text-primary" />
+              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <User size={18} className="text-primary" />
                 </div>
-                <p className="text-3xl font-heading font-bold text-primary">{s.value}</p>
-                <h3 className="font-heading font-semibold text-sm mt-2 text-foreground">{s.title}</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{s.desc}</p>
+                <div>
+                  <p className="font-heading font-semibold text-sm text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 3 metric boxes */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: Building2,
+              value: "300+",
+              title: "Verified Suppliers",
+              desc: "A vetted network across India, continuously evaluated for reliability and scale.",
+            },
+            {
+              icon: Globe,
+              value: "5+",
+              title: "Countries Served",
+              desc: "Trusted by buyers in Europe, Australia, Vietnam, Thailand, and Sri Lanka.",
+            },
+            {
+              icon: Star,
+              value: "4.9/5",
+              title: "Client Satisfaction Score",
+              desc: "Based on feedback from our valued partners.",
+            },
+          ].map((m) => (
+            <div key={m.title} className="bg-card rounded-2xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                <m.icon size={26} className="text-primary" />
+              </div>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-primary">{m.value}</p>
+              <h3 className="font-heading font-semibold text-base mt-3 text-foreground">{m.title}</h3>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{m.desc}</p>
+            </div>
+          ))}
         </div>
       </SectionWrapper>
 
@@ -326,7 +461,7 @@ export default function Index() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
             >
-              Request a Quote
+              Source now
             </Link>
             <Link
               to="/contact"

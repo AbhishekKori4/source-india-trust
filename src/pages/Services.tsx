@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, ShieldCheck, Truck, FileCheck, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Search, ShieldCheck, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -15,18 +15,6 @@ const services = [
     title: "Quality Assurance",
     desc: "We implement multi-stage quality checks, including pre-production validation, in-process inspections, and final quality checks before dispatch.",
     benefits: ["Pre-production validation", "In-process inspections", "Final quality checks", "Detailed reporting"],
-  },
-  {
-    icon: Truck,
-    title: "Export & Logistics Management",
-    desc: "We manage the entire logistics chain including packaging, freight coordination, and shipment tracking to ensure timely and secure delivery.",
-    benefits: ["End-to-end freight coordination", "Real-time shipment tracking", "Secure packaging standards", "Timely delivery execution"],
-  },
-  {
-    icon: FileCheck,
-    title: "Documentation & Compliance",
-    desc: "We handle all necessary export documentation such as invoices, certificates, customs paperwork, and regulatory compliance requirements.",
-    benefits: ["Export documentation management", "Customs paperwork", "Regulatory compliance", "Certificate handling"],
   },
   {
     icon: Wrench,
@@ -77,7 +65,7 @@ export default function Services() {
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground">Need a tailored sourcing solution?</h2>
           <Link to="/contact" className="inline-flex items-center gap-2 mt-8 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity">
-            Request a Quote <ArrowRight size={18} />
+            Source now <ArrowRight size={18} />
           </Link>
         </div>
       </section>
