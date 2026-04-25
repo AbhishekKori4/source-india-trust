@@ -47,9 +47,9 @@ export default function Process() {
     <>
       <section className="bg-primary py-20 md:py-28">
         <div className="container">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">How It Works</h1>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">Simplified Global Trading</h1>
           <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
-            A structured, transparent sourcing process designed to reduce complexity and build confidence at every step.
+            Five seamless stages — from your first request to delivery and beyond — designed to make global sourcing effortless and predictable.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function Process() {
       <SectionWrapper>
         <SectionHeading
           title="Your Sourcing Journey in 5 Stages"
-          subtitle="From first conversation to final delivery — every step managed with precision and accountability."
+          subtitle="From request form to post-trade support — every step managed with precision and accountability."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s, i) => (
