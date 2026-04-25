@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
-  Search, ShieldCheck, Truck, FileCheck, Wrench,
+  Search, ShieldCheck, Wrench,
   CheckCircle2, Eye, Clock, Scale, Settings, Globe,
   Factory, ShoppingBag, Shirt, Gem, Package,
   ArrowRight, UserCheck, BookOpen, HeartHandshake, Lock,
-  Building2, Star, User, Phone, Quote
+  Building2, Star, User, Phone, Quote,
+  AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import SectionWrapper from "@/components/SectionWrapper";
