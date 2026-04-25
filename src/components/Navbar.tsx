@@ -30,7 +30,7 @@ export default function Navbar() {
               key={l.to}
               to={l.to}
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                pathname === l.to ? "text-primary" : "text-muted-foreground"
+                pathname === l.to || (l.to !== "/" && pathname.startsWith(l.to)) ? "text-primary" : "text-muted-foreground"
               }`}
             >
               {l.label}
