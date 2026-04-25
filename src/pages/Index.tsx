@@ -24,8 +24,6 @@ const trustItems = [
 const services = [
   { icon: Search, title: "Product Sourcing", desc: "We identify and onboard the most suitable suppliers based on your product requirements, volume expectations, and quality standards." },
   { icon: ShieldCheck, title: "Quality Assurance", desc: "Multi-stage quality checks including pre-production validation, in-process inspections, and final quality checks before dispatch." },
-  { icon: Truck, title: "Export & Logistics Management", desc: "Complete logistics chain management including packaging, freight coordination, and shipment tracking for timely delivery." },
-  { icon: FileCheck, title: "Documentation & Compliance", desc: "All necessary export documentation — invoices, certificates, customs paperwork, and regulatory compliance handled seamlessly." },
   { icon: Wrench, title: "Customization & Product Development", desc: "Close collaboration with suppliers to customize products based on your specifications, design, materials, and packaging." },
 ];
 
