@@ -461,7 +461,7 @@ export default function Index() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
             >
-              Request a Quote
+              Source now
             </Link>
             <Link
               to="/contact"
