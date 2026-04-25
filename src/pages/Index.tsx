@@ -220,7 +220,7 @@ export default function Index() {
 
       {/* Why Choose Us */}
       <SectionWrapper>
-        <SectionHeading title="Why Global Buyers Choose ShreySure Global" />
+        <SectionHeading title="Why import from us?" />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {whyUs.map((w) => (
             <div key={w.title} className="flex items-start gap-4">
