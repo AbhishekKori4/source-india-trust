@@ -273,6 +273,59 @@ export default function Index() {
         </div>
       </SectionWrapper>
 
+      {/* Pain Points */}
+      <SectionWrapper className="bg-section-alt">
+        <div className="max-w-3xl mx-auto text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Sourcing Shouldn't Feel Like a Gamble
+          </h2>
+          <p className="mt-5 text-muted-foreground leading-relaxed">
+            What starts as a "great deal" often turns into costly setbacks — leaving you asking, <span className="italic">"Can I really trust this process?"</span>
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+          {[
+            { icon: AlertTriangle, title: "Off-Sample Products", desc: "Products that don't match approved samples." },
+            { icon: ShieldCheck, title: "Inconsistent Quality", desc: "Quality you can't reliably sell to your customers." },
+            { icon: Clock, title: "Disruptive Delays", desc: "Missed timelines that throw your operations off track." },
+            { icon: TrendingDown, title: "Hidden Costs", desc: "Surprise charges that quietly erode your margins." },
+          ].map((p) => (
+            <div key={p.title} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
+              <div className="w-11 h-11 rounded-lg bg-destructive/10 flex items-center justify-center mb-4">
+                <p.icon size={20} className="text-destructive" />
+              </div>
+              <h3 className="font-heading font-semibold text-base mb-2">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-card border border-border rounded-2xl p-8 md:p-10 max-w-4xl mx-auto">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="flex-shrink-0 w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center">
+              <HelpCircle size={20} className="text-primary" />
+            </div>
+            <div>
+              <h3 className="font-heading font-semibold text-lg">You're trying to grow your business, not manage uncertainty.</h3>
+              <p className="text-sm text-muted-foreground mt-1">Yet most buyers are forced to navigate:</p>
+            </div>
+          </div>
+          <ul className="space-y-3 pl-1">
+            {[
+              "A fragmented supplier landscape",
+              "Limited visibility into quality control",
+              "No assurance of what you'll actually receive",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-secondary flex-shrink-0" />
+                <span className="text-sm font-medium text-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionWrapper>
+
       {/* Process */}
       <SectionWrapper>
         <SectionHeading title="How It Works" subtitle="A structured, transparent process from requirement to delivery — in five seamless stages." />
