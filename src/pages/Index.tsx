@@ -38,11 +38,11 @@ const whyUs = [
 ];
 
 const steps = [
-  { num: "01", icon: Search, title: "Discover & Define", desc: "We deeply understand your product specs, quality benchmarks, and timelines, then identify verified suppliers from our network." },
-  { num: "02", icon: FileCheck, title: "Sample & Agree", desc: "Samples are validated against your expectations, followed by transparent pricing and clear contractual agreements." },
-  { num: "03", icon: Settings, title: "Produce & Oversee", desc: "Production progress is closely monitored to ensure timeline adherence and consistent quality standards." },
-  { num: "04", icon: ShieldCheck, title: "Inspect & Approve", desc: "Multi-stage quality inspections before shipment ensure full compliance with your agreed specifications." },
-  { num: "05", icon: Truck, title: "Export & Deliver", desc: "End-to-end shipping, documentation, and delivery coordination right to your destination." },
+  { num: "01", icon: ClipboardEdit, title: "Importer Fills Request Form", desc: "Share your product requirements, target specifications, volumes, and timelines through a simple structured form." },
+  { num: "02", icon: ClipboardCheck, title: "SGE Team Reviews & Qualifies", desc: "Our team reviews your request, qualifies feasibility, and aligns on commercials, quality benchmarks, and scope." },
+  { num: "03", icon: Handshake, title: "Match With Verified Exporter", desc: "We match you with the right verified supplier from our network — chosen for quality, capacity, and reliability." },
+  { num: "04", icon: Truck, title: "Coordination & Delivery", desc: "We coordinate production oversight, quality inspections, documentation, shipping, and delivery to your destination." },
+  { num: "05", icon: MessageCircle, title: "Post-Trade Support", desc: "Continued support after delivery — resolution, reorders, and long-term partnership for predictable sourcing." },
 ];
 
 const industries = [
