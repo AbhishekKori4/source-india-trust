@@ -52,6 +52,63 @@ const industries = [
   { icon: Package, title: "Custom Product Requirements" },
 ];
 
+function SupplierCounter() {
+  const [count, setCount] = useState(235);
+  useEffect(() => {
+    let frame: number;
+    const start = performance.now();
+    const duration = 2200;
+    const from = 235;
+    const to = 300;
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(from + (to - from) * eased));
+      if (progress < 1) frame = requestAnimationFrame(step);
+    };
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="relative bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/15 rounded-3xl p-8 md:p-10 overflow-hidden"
+    >
+      <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-secondary/20 blur-3xl" />
+      <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-secondary/10 blur-3xl" />
+      <div className="relative">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/20 text-secondary text-xs font-semibold uppercase tracking-wider mb-6">
+          <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+          Live Network
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-7xl md:text-8xl font-heading font-bold text-primary-foreground tabular-nums leading-none">
+            {count}
+          </span>
+          <span className="text-4xl md:text-5xl font-heading font-bold text-secondary">+</span>
+        </div>
+        <p className="mt-4 text-lg font-semibold text-primary-foreground">Verified Suppliers</p>
+        <p className="text-sm text-primary-foreground/70 mt-1">Vetted across India — and growing every week.</p>
+
+        <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-primary-foreground/15">
+          {[
+            { value: "5+", label: "Countries" },
+            { value: "12+", label: "Categories" },
+            { value: "4.9★", label: "Rating" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <div className="text-xl font-heading font-bold text-primary-foreground">{stat.value}</div>
+              <div className="text-xs text-primary-foreground/60 mt-0.5">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Index() {
   return (
     <>
@@ -62,33 +119,29 @@ export default function Index() {
           <div className="absolute inset-0 bg-primary/85" />
         </div>
         <div className="container relative z-10 py-20">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
-              Your Trusted Partner for Global Sourcing from India
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
-              End-to-end sourcing, quality assurance, and export solutions designed for reliability, transparency, and scale.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
-              >
-                Request a Quote <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-lg border-2 border-primary-foreground/30 px-7 py-3.5 font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-              >
-                Speak to an Expert
-              </Link>
-            </div>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight">
+                Source with Confidence from India's Most Reliable Suppliers
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
+                End-to-end sourcing, quality assurance, and export solutions designed for reliability, transparency, and scale.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity"
+                >
+                  Source now <ArrowRight size={18} />
+                </Link>
+              </div>
+            </motion.div>
+            <SupplierCounter />
+          </div>
         </div>
       </section>
 
