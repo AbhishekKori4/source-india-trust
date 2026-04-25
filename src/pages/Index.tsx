@@ -366,55 +366,84 @@ export default function Index() {
         </div>
       </SectionWrapper>
 
-      {/* Stats & Testimonial */}
+      {/* Customer Stories */}
       <SectionWrapper>
         <SectionHeading
-          title="The Freedom to Plan, the Power to Deliver"
-          subtitle="We take care of sourcing, inspecting, and preparing your goods for export. From procurement to port delivery, we make the process smooth and hassle-free."
+          title="Customer Stories"
+          subtitle="Real outcomes from buyers who trusted ShreySure Global to manage their sourcing end-to-end."
         />
-        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* Testimonial */}
-          <div className="bg-card rounded-2xl border border-border p-8 md:p-10 flex flex-col justify-between">
-            <div>
-              <Quote size={36} className="text-secondary mb-4" />
-              <div className="flex gap-1 mb-5">
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              quote: "ShreySure Global transformed how we source from India. Their proactive communication and flawless execution saved us thousands on our last shipment.",
+              name: "Rohan Sharma",
+              role: "Import Manager, Apex Textiles",
+            },
+            {
+              quote: "We struggled with quality issues for years. With ShreySure, every batch arrives matching our approved sample — no surprises, no rejects.",
+              name: "Linh Nguyen",
+              role: "Procurement Lead, Saigon Home Goods",
+            },
+            {
+              quote: "Their compliance and documentation are flawless. Customs clearance has never been smoother. Truly an extension of our own team.",
+              name: "Marcus Weber",
+              role: "Operations Director, Berlin Imports GmbH",
+            },
+          ].map((t) => (
+            <div key={t.name} className="bg-card rounded-2xl border border-border p-7 flex flex-col hover:shadow-lg transition-shadow">
+              <Quote size={28} className="text-secondary mb-4" />
+              <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className="fill-secondary text-secondary" />
+                  <Star key={i} size={16} className="fill-secondary text-secondary" />
                 ))}
               </div>
-              <p className="text-base md:text-lg text-foreground leading-relaxed italic">
-                "Working with ShreySure Global has been a game-changer. Their proactive communication and flawless execution saved us thousands on our last international shipment."
+              <p className="text-sm md:text-base text-foreground leading-relaxed italic flex-1">
+                "{t.quote}"
               </p>
-            </div>
-            <div className="flex items-center gap-4 mt-8 pt-6 border-t border-border">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <User size={22} className="text-primary" />
-              </div>
-              <div>
-                <p className="font-heading font-semibold text-foreground">Rohan Sharma</p>
-                <p className="text-sm text-muted-foreground">Import Manager, Apex Textiles</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Stats grid */}
-          <div className="grid sm:grid-cols-2 gap-6">
-            {[
-              { icon: Building2, value: "50+", title: "Partner Businesses", desc: "We build lasting relationships, not just process orders." },
-              { icon: Star, value: "4.9/5", title: "Client Satisfaction Score", desc: "Based on feedback from our valued partners." },
-              { icon: User, value: "1-to-1", title: "Dedicated Account Manager", desc: "A single point of contact for all your needs." },
-              { icon: Phone, value: "Direct", title: "Founder Access", desc: "Our leadership is always available to ensure your success." },
-            ].map((s) => (
-              <div key={s.title} className="bg-card rounded-2xl border border-border p-6 text-center flex flex-col items-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <s.icon size={22} className="text-primary" />
+              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <User size={18} className="text-primary" />
                 </div>
-                <p className="text-3xl font-heading font-bold text-primary">{s.value}</p>
-                <h3 className="font-heading font-semibold text-sm mt-2 text-foreground">{s.title}</h3>
-                <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{s.desc}</p>
+                <div>
+                  <p className="font-heading font-semibold text-sm text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 3 metric boxes */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              icon: Building2,
+              value: "300+",
+              title: "Verified Suppliers",
+              desc: "A vetted network across India, continuously evaluated for reliability and scale.",
+            },
+            {
+              icon: Globe,
+              value: "5+",
+              title: "Countries Served",
+              desc: "Trusted by buyers in Europe, Australia, Vietnam, Thailand, and Sri Lanka.",
+            },
+            {
+              icon: Star,
+              value: "4.9/5",
+              title: "Client Satisfaction Score",
+              desc: "Based on feedback from our valued partners.",
+            },
+          ].map((m) => (
+            <div key={m.title} className="bg-card rounded-2xl border border-border p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all">
+              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                <m.icon size={26} className="text-primary" />
+              </div>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-primary">{m.value}</p>
+              <h3 className="font-heading font-semibold text-base mt-3 text-foreground">{m.title}</h3>
+              <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{m.desc}</p>
+            </div>
+          ))}
         </div>
       </SectionWrapper>
 
