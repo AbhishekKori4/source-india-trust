@@ -329,7 +329,7 @@ export default function Index() {
 
       {/* Process */}
       <SectionWrapper>
-        <SectionHeading title="How It Works" subtitle="A structured, transparent process from requirement to delivery — in five seamless stages." />
+        <SectionHeading title="Simplified Global Trading" subtitle="Five seamless stages — from request to delivery and beyond — designed to make global sourcing effortless." />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {steps.map((s, i) => (
             <motion.div
