@@ -65,7 +65,7 @@ export default function Services() {
         <div className="container text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground">Need a tailored sourcing solution?</h2>
           <Link to="/contact" className="inline-flex items-center gap-2 mt-8 rounded-lg bg-secondary px-7 py-3.5 font-semibold text-secondary-foreground hover:opacity-90 transition-opacity">
-            Request a Quote <ArrowRight size={18} />
+            Source now <ArrowRight size={18} />
           </Link>
         </div>
       </section>
