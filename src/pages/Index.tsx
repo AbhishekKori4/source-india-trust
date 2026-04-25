@@ -414,6 +414,20 @@ export default function Index() {
           ))}
         </div>
 
+        {/* Bridging header */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-xs font-semibold uppercase tracking-wider mb-5">
+            <Trophy size={14} />
+            Proof in Numbers
+          </div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+            Trusted by Buyers. Backed by Results.
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            A growing network, a global footprint, and a satisfaction score that reflects our commitment to every partnership.
+          </p>
+        </div>
+
         {/* 3 metric boxes */}
         <div className="grid md:grid-cols-3 gap-6">
           {[
