@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-card/90 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="ShreySure Global" className="h-20 md:h-24 w-auto" />
+          <img src={logo} alt="ShreySure Global" className="h-26 md:h-32 w-auto" style={{ height: undefined }} />
         </Link>
 
         {/* Desktop */}
