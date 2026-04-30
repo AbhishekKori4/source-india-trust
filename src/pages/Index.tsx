@@ -117,7 +117,7 @@ export default function Index() {
       <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="" className="w-full h-full object-cover" width={1920} height={1080} />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/40" />
         </div>
         <div className="container relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
