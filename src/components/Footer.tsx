@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="container py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <img src={logo} alt="ShreySure Global" className="h-10 mb-4 brightness-0 invert" />
+            <img src={logo} alt="ShreySure Global" className="h-24 mb-4 brightness-0 invert" />
             <p className="text-sm opacity-80 leading-relaxed max-w-xs">
               Global sourcing and export facilitation from India, delivered with trust, transparency, and professional integrity.
             </p>

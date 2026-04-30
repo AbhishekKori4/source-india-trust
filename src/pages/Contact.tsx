@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, ShieldCheck, Globe, BellRing, TrendingUp } 
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/hooks/use-toast";
+import contactBg from "@/assets/contact-port.png";
 
 type Mode = "importer" | "exporter";
 
@@ -33,12 +34,14 @@ export default function Contact() {
 
   return (
     <>
-      <section className="bg-primary py-20 md:py-28">
-        <div className="container">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${contactBg})` }} />
+        <div className="absolute inset-0 bg-primary/40" />
+        <div className="container relative">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">
             Let's Connect
           </h1>
-          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
             Whether you're sourcing from India or exporting from it, share your details and our team
             will respond within 24 hours.
           </p>
@@ -48,6 +51,11 @@ export default function Contact() {
       <SectionWrapper>
         <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
+            <p className="text-muted-foreground mb-6 leading-relaxed text-base">
+              {mode === "importer"
+                ? "Submit your import requirements privately. Our team will review and connect you with suitable Indian exporters within 24 hours."
+                : "Register your export capabilities and get connected with international buyers. We match you with genuine buyers looking for your products."}
+            </p>
             {/* Toggle */}
             <div className="inline-flex p-1 rounded-xl bg-muted border border-border mb-8">
               <button
@@ -164,10 +172,6 @@ function ImporterForm({
 }) {
   return (
     <>
-      <p className="text-muted-foreground mb-8 leading-relaxed">
-        Submit your import requirements privately. Our team will review and connect you with
-        suitable Indian exporters within 24 hours.
-      </p>
       <form onSubmit={onSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <Field label="Your Name" required>
@@ -281,10 +285,6 @@ function ExporterForm({
 }) {
   return (
     <>
-      <p className="text-muted-foreground mb-8 leading-relaxed">
-        Register your export capabilities and get connected with international buyers. We match you
-        with genuine buyers looking for your products.
-      </p>
       <form onSubmit={onSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <Field label="Email" required>
