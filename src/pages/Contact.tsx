@@ -285,10 +285,6 @@ function ExporterForm({
 }) {
   return (
     <>
-      <p className="text-muted-foreground mb-8 leading-relaxed">
-        Register your export capabilities and get connected with international buyers. We match you
-        with genuine buyers looking for your products.
-      </p>
       <form onSubmit={onSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <Field label="Email" required>
