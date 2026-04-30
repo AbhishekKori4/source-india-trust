@@ -10,7 +10,7 @@ import {
   AlertTriangle, TrendingDown, HelpCircle, MapPin, FileCheck, Truck,
   ClipboardEdit, ClipboardCheck, Handshake, MessageCircle, Trophy
 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-port.png";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 
