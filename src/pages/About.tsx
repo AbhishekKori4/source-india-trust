@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, HeartHandshake, ShieldCheck, Globe, Target, Users, Award } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
+import heroBg from "@/assets/hero-port-wide.png";
 
 const values = [
   { icon: HeartHandshake, title: "Trust", desc: "We prioritize long-term relationships through transparency and ethical practices." },
@@ -15,10 +16,12 @@ const values = [
 export default function About() {
   return (
     <>
-      <section className="bg-primary py-20 md:py-28">
-        <div className="container">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container relative">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">About ShreySure Global</h1>
-          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
             Simplifying global sourcing from India through trust, quality, and professional accountability.
           </p>
         </div>

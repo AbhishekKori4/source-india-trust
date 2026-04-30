@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import { blogPosts } from "@/data/blogPosts";
+import heroBg from "@/assets/hero-port-wide.png";
 
 export default function Blog() {
   return (
     <>
-      <section className="bg-primary py-20 md:py-28">
-        <div className="container">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container relative">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">
             Insights from the Sourcing Floor
           </h1>
-          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
             Practical guides on importing from India, written by people who do it every day.
           </p>
         </div>

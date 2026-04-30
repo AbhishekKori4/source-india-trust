@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Search, ShieldCheck, Wrench, ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
+import heroBg from "@/assets/hero-port-wide.png";
 
 const services = [
   {
@@ -27,10 +28,12 @@ const services = [
 export default function Services() {
   return (
     <>
-      <section className="bg-primary py-20 md:py-28">
-        <div className="container">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container relative">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">Our Services</h1>
-          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
             Comprehensive sourcing and export solutions designed to simplify global trade.
           </p>
         </div>
