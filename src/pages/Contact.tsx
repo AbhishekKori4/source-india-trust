@@ -172,10 +172,6 @@ function ImporterForm({
 }) {
   return (
     <>
-      <p className="text-muted-foreground mb-8 leading-relaxed">
-        Submit your import requirements privately. Our team will review and connect you with
-        suitable Indian exporters within 24 hours.
-      </p>
       <form onSubmit={onSubmit} className="space-y-5">
         <div className="grid sm:grid-cols-2 gap-5">
           <Field label="Your Name" required>
