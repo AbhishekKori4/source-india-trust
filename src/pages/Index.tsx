@@ -373,46 +373,7 @@ export default function Index() {
           title="Customer Stories"
           subtitle="Real outcomes from buyers who trusted ShreySure Global to manage their sourcing end-to-end."
         />
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {[
-            {
-              quote: "ShreySure Global transformed how we source from India. Their proactive communication and flawless execution saved us thousands on our last shipment.",
-              name: "Rohan Sharma",
-              role: "Import Manager, Apex Textiles",
-            },
-            {
-              quote: "We struggled with quality issues for years. With ShreySure, every batch arrives matching our approved sample — no surprises, no rejects.",
-              name: "Linh Nguyen",
-              role: "Procurement Lead, Saigon Home Goods",
-            },
-            {
-              quote: "Their compliance and documentation are flawless. Customs clearance has never been smoother. Truly an extension of our own team.",
-              name: "Marcus Weber",
-              role: "Operations Director, Berlin Imports GmbH",
-            },
-          ].map((t) => (
-            <div key={t.name} className="bg-card rounded-2xl border border-border p-7 flex flex-col hover:shadow-lg transition-shadow">
-              <Quote size={28} className="text-secondary mb-4" />
-              <div className="flex gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={16} className="fill-secondary text-secondary" />
-                ))}
-              </div>
-              <p className="text-sm md:text-base text-foreground leading-relaxed italic flex-1">
-                "{t.quote}"
-              </p>
-              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-border">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <User size={18} className="text-primary" />
-                </div>
-                <div>
-                  <p className="font-heading font-semibold text-sm text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <CustomerStoriesCarousel />
 
         {/* Bridging header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
