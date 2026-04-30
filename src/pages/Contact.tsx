@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Clock, ShieldCheck, Globe, BellRing, TrendingUp } 
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
 import { useToast } from "@/hooks/use-toast";
+import contactBg from "@/assets/contact-port.png";
 
 type Mode = "importer" | "exporter";
 
