@@ -51,6 +51,11 @@ export default function Contact() {
       <SectionWrapper>
         <div className="grid lg:grid-cols-5 gap-12">
           <div className="lg:col-span-3">
+            <p className="text-muted-foreground mb-6 leading-relaxed text-base">
+              {mode === "importer"
+                ? "Submit your import requirements privately. Our team will review and connect you with suitable Indian exporters within 24 hours."
+                : "Register your export capabilities and get connected with international buyers. We match you with genuine buyers looking for your products."}
+            </p>
             {/* Toggle */}
             <div className="inline-flex p-1 rounded-xl bg-muted border border-border mb-8">
               <button
