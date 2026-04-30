@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ClipboardEdit, ClipboardCheck, Handshake, Truck, MessageCircle, ShieldCheck } from "lucide-react";
 import SectionWrapper from "@/components/SectionWrapper";
 import SectionHeading from "@/components/SectionHeading";
+import heroBg from "@/assets/hero-port-wide.png";
 
 const steps = [
   {
@@ -45,10 +46,12 @@ const steps = [
 export default function Process() {
   return (
     <>
-      <section className="bg-primary py-20 md:py-28">
-        <div className="container">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBg})` }} />
+        <div className="absolute inset-0 bg-primary/70" />
+        <div className="container relative">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground max-w-3xl">Simplified Global Trading</h1>
-          <p className="mt-6 text-lg text-primary-foreground/80 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
             Five seamless stages — from your first request to delivery and beyond — designed to make global sourcing effortless and predictable.
           </p>
         </div>
